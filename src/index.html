@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Teawall</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <%= require('html-loader!./htmlPartials/navbar.html') %>
+    </header>
+    <main class="main-container">
+      <div class="last-post-container">
+        <h1>Последние события</h1>
+        <div class="last-post-row">
+
+          <%= require('html-loader!./htmlPartials/post.html') %>
+          <%= require('html-loader!./htmlPartials/post.html') %>
+          <%= require('html-loader!./htmlPartials/post.html') %>
+          <%= require('html-loader!./htmlPartials/post.html') %>
+          <%= require('html-loader!./htmlPartials/post.html') %>
+          <%= require('html-loader!./htmlPartials/post.html') %>
+
+        </div>
+      </div>
+    </main>
+    <%= require('html-loader!./htmlPartials/footer.html') %>
+  </div>
+</body>
+
+</html>

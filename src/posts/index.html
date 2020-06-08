@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Новости</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <%= require('html-loader!../htmlPartials/navbar.html') %>
+    </header>
+    <main>
+      <div class="posts-container">
+        <h1>Новости</h1>
+        <div class="grid">
+          <div class="grid-sizer"></div>
+          <%= require('html-loader!../htmlPartials/news.html') %>
+          <%= require('html-loader!../htmlPartials/news1.html') %>
+          <%= require('html-loader!../htmlPartials/news2.html') %>
+          <%= require('html-loader!../htmlPartials/news2.html') %>
+          <%= require('html-loader!../htmlPartials/news.html') %>
+          <%= require('html-loader!../htmlPartials/news1.html') %>
+          <%= require('html-loader!../htmlPartials/news1.html') %>
+          <%= require('html-loader!../htmlPartials/news.html') %>
+          <%= require('html-loader!../htmlPartials/news2.html') %>
+          <%= require('html-loader!../htmlPartials/news1.html') %>
+          <%= require('html-loader!../htmlPartials/news2.html') %>
+
+        </div>
+      </div>
+
+  </div>
+  </main>
+  <%= require('html-loader!../htmlPartials/footer.html') %>
+  </div>
+</body>
+
+</html>

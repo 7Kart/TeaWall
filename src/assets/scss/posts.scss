@@ -1,0 +1,165 @@
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    margin: 0 auto;
+    @media screen and (max-width: $smDesktopWidth) {
+        width: 100%;
+        margin: 0;
+    }
+    & > h1 {
+        padding: calc(10px+#{$marginPost}) $marginPost 10px $marginPost;
+        font-family: Lora;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 109.6%;
+        @media screen and(max-width: $smDesktopWidth) {
+            font-size: 34px;
+        }
+        @media screen and(max-width: $tableWidth) {
+            font-size: 24px;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            font-size: 22px;
+            margin: 0;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            font-size: 20px;
+            margin: 0 10%;
+        }
+    }
+}
+
+.grid {
+    // background: #ddd;
+}
+
+/* clear fix */
+.grid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer {
+    width: calc(100% / 12 * 4 - 2 *#{$marginPost});
+    @media screen and (max-width: $smDesktopWidth) {
+        width: calc(100% / 12 * 6 - 2 *#{$marginPost});
+    }
+    @media screen and (max-width: $smTableWidth) {
+        width: calc(100% / 12 * 12 - 2 *#{$marginPost});
+    }
+    margin: $marginPost;
+}
+.grid-item {
+    // width: 33.333%;
+    width: calc(100% / 12 * 4 - 2 *#{$marginPost});
+    @media screen and (max-width: $smDesktopWidth) {
+        width: calc(100% / 12 * 6 - 2 *#{$marginPost});
+    }
+    @media screen and (max-width: $smTableWidth) {
+        width: calc(100% / 12 * 12 - 2 *#{$marginPost});
+    }
+    margin: $marginPost;
+    border: 1px solid #cccccc;
+    // width: calc(100% / 12 * 12-2 *#{$marginGrid});
+}
+
+.grid-item {
+    float: left;
+    .image-container {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .post-meta {
+            top: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            .post-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .hashtag {
+                    padding: 5px;
+                    border-radius: 6px;
+                    background-color: #bdf8a3;
+                    a {
+                        cursor: pointer;
+                    }
+                }
+                .share {
+                    display: flex;
+                    width: 30px;
+                    font-size: 22px;
+                    color: white;
+                    justify-content: center;
+                    i {
+                        cursor: pointer;
+                        @media screen and(max-width: $phoneWidth) {
+                            font-size: 18px;
+                        }
+                        &:hover {
+                            color: #bdf8a3;
+                        }
+                    }
+                }
+            }
+
+            .post-footer {
+                display: flex;
+                color: white;
+                .author-avatar {
+                    img {
+                        border-radius: 50%;
+                        @media screen and(max-width: $phoneWidth) {
+                            height: 34px;
+                            width: auto;
+                        }
+                    }
+                }
+                .post-info {
+                    padding-left: 10px;
+                    @media screen and(max-width: $phoneWidth) {
+                        font-size: 12px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+    .block-info {
+        padding: 10px;
+        background: #f9f9f9;
+        font-family: Raleway;
+        h1 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+        }
+        p {
+            font-family: Lora;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 22px;
+        }
+    }
+}

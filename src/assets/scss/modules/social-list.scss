@@ -1,0 +1,44 @@
+$social-list-width: 55px;
+$social-list-mrg: 5px;
+
+.social-link-container-open{
+    visibility: visible !important;
+    transition: height 0.4 ease;
+    visibility: visible;
+
+}
+
+.social-link-container {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    width: calc(#{$social-list-width} + 2*#{$social-list-mrg});
+    height: 80%;
+    background-color: red;
+
+    .sociali-item {
+        width: $social-list-width;
+        height: $social-list-width;
+        margin: $social-list-mrg;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        align-items: center;
+        i {
+            color: white;
+        }
+    }
+    #social-item-facebook {
+        background-color: #4464a3;
+    }
+    #social-item-twitter {
+        background-color: #55acee;
+    }
+    #social-item-linkedin-in {
+        background-color: #0077b5;
+    }
+    #social-item-link {
+        background-color: #333;;
+    }
+}

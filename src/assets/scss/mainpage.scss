@@ -1,0 +1,201 @@
+@import "utils/vars";
+@import "utils/mixins";
+@import "modules/social-list.scss";
+
+.last-post-container {
+    width: 1024px;
+    @media screen and(max-width: 1024px) {
+        width: 100%;
+        margin: 0;
+    }
+    & > h1 {
+        padding: calc(10px+#{$marginPost}) $marginPost 10px $marginPost;
+        font-family: Lora;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 109.6%;
+        @media screen and(max-width: $smDesktopWidth) {
+            font-size: 34px;
+            margin: 0 20%;
+        }
+        @media screen and(max-width: $tableWidth) {
+            font-size: 24px;
+            margin: 0 10%;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            font-size: 22px;
+            margin: 0;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            font-size: 20px;
+            margin: 0 10%;
+        }
+    }
+    margin: 0 auto;
+
+    .last-post-row {
+        display: flex;
+        flex-wrap: wrap;
+        // margin: 0 calc(-1 *#{$marginPost});
+        // width: 100%;
+        @media screen and(max-width: $smDesktopWidth) {
+            margin: 0 20%;
+            // width: 100%;
+        }
+        @media screen and(max-width: $tableWidth) {
+            margin: 0 10%;
+            // width: 100%;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            margin: 0;
+            // width: 100%;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            margin: 0 10%;
+        }
+
+        .post-item {
+            position: relative;
+            margin: $marginPost;
+            width: calc(100% / 12 * 6 - 2 *#{$marginPost});
+            @media screen and(max-width: 1024px) {
+                width: calc(100% / 12 * 12 - 2 *#{$marginPost});
+            }
+            height: 35vh;
+            // height: 40%;
+
+            @media screen and(max-height: $phoneWidth) {
+                height: 60vw;
+            }
+
+
+            @media screen and(max-width: $phoneWidth) {
+                height: 50vh;
+            }
+
+            @media screen and(max-width: $smPhoneWidth) {
+                height: 55vh;
+            }
+
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            .post-item-wrapper {
+                widows: 100%;
+                height: 100%;
+                background: #38434081;
+                border-radius: inherit;
+                padding: 5% 5%;
+                @media screen and(max-width: $phoneWidth) {
+                    padding: 5% 5%;
+                }
+                .post-item-content {
+                    display: flex;
+                    overflow: hidden;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                    .post-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .hashtag {
+                            font-family: Raleway;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 16px;
+                            padding: 5px;
+                            border-radius: 6px;
+                            background-color: $active-link-color;
+                            @media screen and(max-width: $phoneWidth) {
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 14px;
+                            }
+                            @media screen and(max-width: $phoneWidth) {
+                                font-weight: 600;
+                                font-size: 12px;
+                                line-height: 12px;
+                            }
+                            a {
+                                cursor: pointer;
+                            }
+                        }
+                        .share {
+                            display: flex;
+                            width: 30px;
+                            font-size: 22px;
+                            color: white;
+                            justify-content: center;
+                            i {
+                                cursor: pointer;
+                                @media screen and(max-width: $phoneWidth) {
+                                    font-size: 18px;
+                                }
+                                &:hover {
+                                    color: #bdf8a3;
+                                }
+                            }
+                        }
+                    }
+
+                    h2 {
+                        font-family: Raleway;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 28px;
+                        line-height: 33px;
+                        color: #ffffff;
+                        @media screen and(max-width: $phoneWidth) {
+                            font-weight: 500;
+                            font-size: 22px;
+                            line-height: 26px;
+                        }
+                        @media screen and(max-width: $smPhoneWidth) {
+                            font-weight: 500;
+                            font-size: 20px;
+                            line-height: 22px;
+                        }
+                    }
+
+                    p {
+                        font-family: Lora;
+                        font-style: italic;
+                        font-weight: normal;
+                        font-size: 17px;
+                        line-height: 22px;
+                        color: #ffffff;
+                        @media screen and(max-width: $phoneWidth) {
+                            font-size: 14px;
+                            line-height: 18px;
+                        }
+                    }
+
+                    .post-meta {
+                        display: flex;
+                        .author-avatar {
+                            img {
+                                border-radius: 50%;
+                                @media screen and(max-width: $phoneWidth) {
+                                    height: 34px;
+                                    width: auto;
+                                }
+                            }
+                        }
+                        .post-info {
+                            padding-left: 10px;
+                            @media screen and(max-width: $phoneWidth) {
+                                font-size: 12px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

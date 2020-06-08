@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Новости</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <%= require('html-loader!../htmlPartials/navbar.html') %>
+    </header>
+    <main>
+      <div class="content-wrapper">
+        <div class="project-container">
+          <h1>Наши проекты и партнеры</h1>
+          <div class="projects-row">
+
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+            <!-- project item -->
+            <%= require('html-loader!../htmlPartials/partner.html') %>
+            <!-- project item end -->
+          </div>
+        </div>
+
+        <!-- partner container         -->
+        <div class="partner-container">
+          <div class="partner-row">
+            <div class="partner-item">
+              <img src="../assets/img/partner/partner4.png" />
+            </div>
+            <div class="partner-item">
+              <img src="../assets/img/partner/partner1.png" />
+            </div>
+            <div class="partner-item">
+              <img src="../assets/img/partner/partner2.png" />
+            </div>
+            <div class="partner-item">
+              <img src="../assets/img/partner/partner3.png" />
+            </div>
+          </div>
+        </div>
+        <!-- end partner conainer -->
+
+      </div>
+    </main>
+    <%= require('html-loader!../htmlPartials/footer.html') %>
+  </div>
+</body>
+
+</html>

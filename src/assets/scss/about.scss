@@ -1,0 +1,157 @@
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+.content-wrapper {
+    justify-content: space-between;
+}
+
+.project-container {
+    width: 1024px;
+    margin: 0 auto;
+    @media screen and (max-width: $smDesktopWidth) {
+        width: 100%;
+        margin: 0;
+    }
+    & > h1 {
+        padding: calc(10px+#{$marginPost}) $marginPost 10px $marginPost;
+        font-family: Lora;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 42px;
+        line-height: 109.6%;
+        @media screen and(max-width: $smDesktopWidth) {
+            font-size: 34px;
+            margin-left: 20%;
+        }
+        @media screen and(max-width: $tableWidth) {
+            font-size: 24px;
+            margin-left: 10%;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            font-size: 22px;
+            margin: 0;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            font-size: 20px;
+            margin: 0 10%;
+        }
+    }
+
+    .projects-row {
+        display: flex;
+        flex-wrap: wrap;
+        // margin: 0 calc(-1 *#{$marginPost});
+        // width: 100%;
+        @media screen and(max-width: $smDesktopWidth) {
+            margin: 0 20%;
+            // width: 100%;
+        }
+        @media screen and(max-width: $tableWidth) {
+            margin: 0 10%;
+            // width: 100%;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            margin: 0;
+            // width: 100%;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            margin: 0 10%;
+        }
+
+        .project-item {
+            position: relative;
+            margin: $marginPost;
+            width: calc(100% / 12 * 4 - 2 *#{$marginPost});
+            border-radius: 10px;
+            @media screen and(max-width: $smDesktopWidth) {
+                width: calc(100% / 12 * 6 - 2 *#{$marginPost});
+            }
+            @media screen and(max-width: $phoneWidth) {
+                width: calc(100% / 12 * 12 - 2 *#{$marginPost});
+            }
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+            .project-image-mask {
+                border-radius: 10px;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: #00000038;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                &:hover {
+                    background-color: #0000005b;
+                }
+                .project-footer {
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    a {
+                        color: white;
+                    }
+                    i{
+                        cursor: pointer;
+                        color: white;
+                        &:hover{
+                            color: $active-link-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.partner-container {
+    width: 1024px;
+    margin: 0 auto;
+    @media screen and (max-width: $smDesktopWidth) {
+        width: 100%;
+        margin: 0;
+    }
+
+    .partner-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and(max-width: $smDesktopWidth) {
+            margin: 0 20%;
+        }
+        @media screen and(max-width: $tableWidth) {
+            margin: 0 10%;
+        }
+        @media screen and(max-width: $smTableWidth) {
+            margin: 0;
+        }
+        @media screen and(max-height: $phoneWidth) {
+            margin: 0 10%;
+        }
+
+        .partner-item {
+            position: relative;
+            margin: 20px $marginPartner;
+            width: calc(100% / 12 * 3 - 2 *#{$marginPartner});
+            @media screen and(max-width: $smDesktopWidth) {
+                margin: 20px 15px;
+             
+                width: calc(100% / 12 * 3 - 2 *15px);
+            }
+            img {
+                width: 100%;
+            }
+            .partner-image-mask {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: #0000001f;
+                &:hover {
+                    background-color: #0000002e;
+                }
+            }
+        }
+    }
+}

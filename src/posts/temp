@@ -1,0 +1,40 @@
+        <div class="post-container-wrapper">
+          <div class="grid">
+            <div class="grid-sizer"></div>
+            <div class="grid-item">
+              <img src="../assets/img/posts/post1.webp" />
+              <div class="post-info">
+
+                <!-- post date and author'sname -->
+                <div class="post-meta">
+                  <div class="avatar-container">
+                    <img src="../assets/img/user-avatar.png" />
+                  </div>
+                  <div>
+                    <span>Имя одмена <i class="fas fa-crown"></i></span>
+                    <span class="post-insert-date">мая 15 &#8226 2 мин. чтения</span>
+                  </div>
+                </div>
+                <!-- end post date and author'sname -->
+                <!-- post header -->
+                <div class="post-content-header">
+                  <h4>Объявлена стоимость чая в 2020 году из 100 знаменитых мест Юньнани</h4>
+                  <p class="summery-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eligendi ad
+                    architecto reprehenderit aliquam unde nostrum, sint id eveniet delectus perspiciatis beatae
+                    perferendis quod aperiam, quae quam. Commodi, veritatis voluptatem?</p>
+                </div>
+                <!-- end post header -->
+                <!-- post's statistic -->
+                <hr />
+                <div class="post-statistic-container">
+                  <div>
+                    <span class="views-count"><i class="far fa-eye"></i> 7</span>
+                    <span>Комментировать</span>
+                  </div>
+                  <div class="like-section"><span>7<i class="far fa-heart"></i></span></div>
+                </div>
+                <!--end post's statistic -->
+              </div>
+            </div>
+          </div>
+        </div>
