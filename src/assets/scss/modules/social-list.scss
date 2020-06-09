@@ -1,23 +1,66 @@
+@import "utils/vars";
+
 $social-list-width: 55px;
 $social-list-mrg: 5px;
 
-.social-link-container-open{
-    visibility: visible !important;
-    transition: height 0.4 ease;
-    visibility: visible;
-
-}
+$circle-animation-time: 0.1s;
 
 .social-link-container {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
     right: 0;
-    top: 20%;
-    width: calc(#{$social-list-width} + 2*#{$social-list-mrg});
-    height: 80%;
-    background-color: red;
+    top: 0;
+    width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});
+    height: auto;
+    padding-top: 5%;
+    &:hover {
+        color: $active-link-color;
+    }
+    .share {
+        display: flex;
+        width: 100%;
+        font-size: 22px;
+        color: white;
+        justify-content: center;
+        margin-bottom: 15px;
+        i {
+            cursor: pointer;
+            @media screen and(max-width: $phoneWidth) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &.social-link-container-open {
+        #social-item-facebook {
+            visibility: visible;
+            transform: scale(0.9, 0.9);
+            transition: transform $circle-animation-time ease;
+        }
+        #social-item-twitter {
+            transition: all $circle-animation-time ease;
+            transition-delay: $circle-animation-time;
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
+        #social-item-linkedin-in {
+            transition: all $circle-animation-time ease;
+            transition-delay: calc(2 * #{$circle-animation-time});
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
+        #social-item-link {
+            transition: all $circle-animation-time ease;
+            transition-delay: calc(3 *#{$circle-animation-time});
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
+    }
 
     .sociali-item {
+        visibility: hidden;
+        transform: scale(0.3, 0.3);
+
         width: $social-list-width;
         height: $social-list-width;
         margin: $social-list-mrg;
@@ -39,6 +82,6 @@ $social-list-mrg: 5px;
         background-color: #0077b5;
     }
     #social-item-link {
-        background-color: #333;;
+        background-color: #333;
     }
 }
