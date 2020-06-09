@@ -4,6 +4,7 @@ $social-list-width: 55px;
 $social-list-mrg: 5px;
 
 $circle-animation-time: 0.1s;
+$circle-opacity-time: 0.15s;
 
 .social-link-container {
     visibility: visible;
@@ -12,10 +13,13 @@ $circle-animation-time: 0.1s;
     top: 0;
     width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});
     height: auto;
-    padding-top: 5%;
-    &:hover {
-        color: $active-link-color;
-    }
+    border-radius: 10px;
+    margin-top: 3%;
+    padding: 2% 0;
+    background-color: transparent;
+    transition-delay:0.5s;
+    transition: background-color 0.5s ease;
+
     .share {
         display: flex;
         width: 100%;
@@ -23,6 +27,10 @@ $circle-animation-time: 0.1s;
         color: white;
         justify-content: center;
         margin-bottom: 15px;
+        cursor: pointer;
+        &:hover {
+            color: $active-link-color;
+        }
         i {
             cursor: pointer;
             @media screen and(max-width: $phoneWidth) {
@@ -32,54 +40,82 @@ $circle-animation-time: 0.1s;
     }
 
     &.social-link-container-open {
+        background-color: rgba(119, 116, 116, 0.623);
+        transition: background-color 0.5s ease;
+
         #social-item-facebook {
             visibility: visible;
             transform: scale(0.9, 0.9);
-            transition: transform $circle-animation-time ease;
+            opacity: 1;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
         }
         #social-item-twitter {
-            transition: all $circle-animation-time ease;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
             transition-delay: $circle-animation-time;
+            opacity: 1;
             transform: scale(0.9, 0.9);
             visibility: visible;
         }
         #social-item-linkedin-in {
-            transition: all $circle-animation-time ease;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
             transition-delay: calc(2 * #{$circle-animation-time});
+            opacity: 1;
             transform: scale(0.9, 0.9);
             visibility: visible;
         }
         #social-item-link {
-            transition: all $circle-animation-time ease;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
             transition-delay: calc(3 *#{$circle-animation-time});
+            opacity: 1;
             transform: scale(0.9, 0.9);
             visibility: visible;
         }
     }
 
-    .sociali-item {
-        visibility: hidden;
-        transform: scale(0.3, 0.3);
+    &:not(.social-link-container-open) {
+        #social-item-facebook {
+            transition-delay: calc(3 *#{$circle-animation-time});
+        }
+        #social-item-twitter {
+            transition-delay: calc(2 * #{$circle-animation-time});
+        }
+        #social-item-linkedin-in {
+            transition-delay: $circle-animation-time;
+        }
+        #social-item-link {
+            transition-delay: 0s;
+        }
+    }
 
+    .sociali-item {
+        cursor: pointer;
+        visibility: hidden;
         width: $social-list-width;
         height: $social-list-width;
         margin: $social-list-mrg;
         display: flex;
+        transform: scale(0.3, 0.3);
+        opacity: 0;
         justify-content: center;
         border-radius: 50%;
         align-items: center;
+        transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+        transition: all 0.2s ease;
+
         i {
             color: white;
         }
     }
+
     #social-item-facebook {
-        background-color: #4464a3;
+        background-color: #4464a3; 
     }
     #social-item-twitter {
         background-color: #55acee;
     }
     #social-item-linkedin-in {
         background-color: #0077b5;
+        
     }
     #social-item-link {
         background-color: #333;
