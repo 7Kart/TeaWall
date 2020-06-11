@@ -15,7 +15,7 @@ const msnry = new Masonry(grid, {
     columnWidth: '.grid-sizer',
     percentPosition: true
 });
- 
+
 const images = grid.getElementsByClassName('post-thumbnail');
 
 //set event OnLoadImage
@@ -23,12 +23,20 @@ const images = grid.getElementsByClassName('post-thumbnail');
 for (let imgInd = 0; imgInd < images.length; imgInd++) {
     const image = images[imgInd];
 
-
     image.addEventListener('load', () => {
         console.log(`image loaded`);
-        
+
         msnry.layout();
     })
 }
 
+//share menu open
+$(document).on('click', ".share", (e) => {
+    const post = $(e.currentTarget).data();
 
+    if (post) {
+        const shareMenu = $(`#link-post-${post.id}`);
+        shareMenu.toggleClass("news-social-list-open")
+    }
+});
+//end share menu open

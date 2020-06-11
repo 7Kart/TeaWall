@@ -1,6 +1,7 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
+@import "modules/social-list-news.scss";
 
 .posts-container {
     display: flex;
@@ -69,6 +70,7 @@
     }
     margin: $marginPost;
     border: 1px solid #cccccc;
+    position: relative;
     // width: calc(100% / 12 * 12-2 *#{$marginGrid});
 }
 
@@ -98,22 +100,6 @@
                     background-color: #bdf8a3;
                     a {
                         cursor: pointer;
-                    }
-                }
-                .share {
-                    display: flex;
-                    width: 30px;
-                    font-size: 22px;
-                    color: white;
-                    justify-content: center;
-                    i {
-                        cursor: pointer;
-                        @media screen and(max-width: $phoneWidth) {
-                            font-size: 18px;
-                        }
-                        &:hover {
-                            color: #bdf8a3;
-                        }
                     }
                 }
             }

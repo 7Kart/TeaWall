@@ -5,6 +5,7 @@ $social-list-mrg: 5px;
 
 $circle-animation-time: 0.1s;
 $circle-opacity-time: 0.15s;
+$social-list-color: rgba(119, 116, 116, 0.623);
 
 .social-link-container {
     visibility: visible;
@@ -17,7 +18,7 @@ $circle-opacity-time: 0.15s;
     margin-top: 3%;
     padding: 2% 0;
     background-color: transparent;
-    transition-delay:0.5s;
+    transition-delay: 0.5s;
     transition: background-color 0.5s ease;
 
     .share {
@@ -40,7 +41,7 @@ $circle-opacity-time: 0.15s;
     }
 
     &.social-link-container-open {
-        background-color: rgba(119, 116, 116, 0.623);
+        background-color: $social-list-color;
         transition: background-color 0.5s ease;
 
         #social-item-facebook {
@@ -108,14 +109,13 @@ $circle-opacity-time: 0.15s;
     }
 
     #social-item-facebook {
-        background-color: #4464a3; 
+        background-color: #4464a3;
     }
     #social-item-twitter {
         background-color: #55acee;
     }
     #social-item-linkedin-in {
         background-color: #0077b5;
-        
     }
     #social-item-link {
         background-color: #333;

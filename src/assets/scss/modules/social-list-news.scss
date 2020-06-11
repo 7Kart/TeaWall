@@ -1,0 +1,74 @@
+$social-list-width: 55px;
+$margin-social-item: 5px;
+
+$circle-animation-time: 0.1s;
+$circle-opacity-time: 0.15s;
+$social-list-color: rgba(119, 116, 116, 0.623);
+
+.news-social-list {
+    width: calc(2 *#{$margin-social-item}+#{$social-list-width});
+    margin-top: 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 990;
+
+    .share {
+        padding-top: 5px;
+        display: flex;
+        font-size: 22px;
+        color: white;
+        justify-content: center;
+        i {
+            cursor: pointer;
+            @media screen and(max-width: $phoneWidth) {
+                font-size: 18px;
+            }
+            &:hover {
+                color: #bdf8a3;
+            }
+        }
+    }
+
+    &.news-social-list-open {
+        background-color: $social-list-color;
+    }
+
+    .social-container {
+        margin-top: 20px;
+
+        .sociali-item {
+            cursor: pointer;
+            width: $social-list-width;
+            height: $social-list-width;
+            // margin: $social-list-mrg;
+            display: flex;
+            margin: $margin-social-item;
+            justify-content: center;
+            border-radius: 50%;
+            align-items: center;
+            // transform: scale(0.3, 0.3);
+            // opacity: 0;
+            // visibility: hidden;
+            // transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+            // transition: all 0.2s ease;
+
+            i {
+                color: white;
+            }
+        }
+        #social-item-facebook {
+            background-color: #4464a3;
+        }
+        #social-item-twitter {
+            background-color: #55acee;
+        }
+        #social-item-linkedin-in {
+            background-color: #0077b5;
+        }
+        #social-item-link {
+            background-color: #333;
+        }
+    }
+}
