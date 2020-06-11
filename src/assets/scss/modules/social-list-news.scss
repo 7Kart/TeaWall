@@ -13,6 +13,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
     right: 0;
     top: 0;
     z-index: 990;
+    transition: background-color 0.5s ease;
 
     .share {
         padding-top: 5px;
@@ -33,6 +34,42 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 
     &.news-social-list-open {
         background-color: $social-list-color;
+        transition: background-color 0.5s ease;
+
+        .social-container {
+            .sociali-item {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        #social-item-facebook {
+            visibility: visible;
+            transform: scale(0.9, 0.9);
+            opacity: 1;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+        }
+        #social-item-twitter {
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+            transition-delay: $circle-animation-time;
+            opacity: 1;
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
+        #social-item-linkedin-in {
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+            transition-delay: calc(2 * #{$circle-animation-time});
+            opacity: 1;
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
+        #social-item-link {
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+            transition-delay: calc(3 *#{$circle-animation-time});
+            opacity: 1;
+            transform: scale(0.9, 0.9);
+            visibility: visible;
+        }
     }
 
     .social-container {
@@ -48,12 +85,11 @@ $social-list-color: rgba(119, 116, 116, 0.623);
             justify-content: center;
             border-radius: 50%;
             align-items: center;
-            // transform: scale(0.3, 0.3);
-            // opacity: 0;
-            // visibility: hidden;
-            // transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
-            // transition: all 0.2s ease;
-
+            transform: scale(0.3, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform $circle-animation-time ease, opacity $circle-opacity-time ease;
+            transition: all 0.2s ease;
             i {
                 color: white;
             }
@@ -69,6 +105,21 @@ $social-list-color: rgba(119, 116, 116, 0.623);
         }
         #social-item-link {
             background-color: #333;
+        }
+    }
+
+    &:not(.news-social-list-open) {
+        #social-item-facebook {
+            transition-delay: calc(3 *#{$circle-animation-time});
+        }
+        #social-item-twitter {
+            transition-delay: calc(2 * #{$circle-animation-time});
+        }
+        #social-item-linkedin-in {
+            transition-delay: $circle-animation-time;
+        }
+        #social-item-link {
+            transition-delay: 0s;
         }
     }
 }
