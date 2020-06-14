@@ -10,4 +10,4 @@ import shareMenu from './js/share-link-menu';
 // CSS (example)
 // import './assets/css/main.css'
 
-shareMenu(".share-button")
+shareMenu(".share-button", "social-link-container-open")

@@ -69,7 +69,6 @@
                 height: 60vw;
             }
 
-
             @media screen and(max-width: $phoneWidth) {
                 height: 50vh;
             }
@@ -125,22 +124,6 @@
                                 cursor: pointer;
                             }
                         }
-                        // .share {
-                        //     display: flex;
-                        //     width: 30px;
-                        //     font-size: 22px;
-                        //     color: white;
-                        //     justify-content: center;
-                        //     i {
-                        //         cursor: pointer;
-                        //         @media screen and(max-width: $phoneWidth) {
-                        //             font-size: 18px;
-                        //         }
-                        //         &:hover {
-                        //             color: #bdf8a3;
-                        //         }
-                        //     }
-                        // }
                     }
 
                     h2 {

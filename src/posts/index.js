@@ -2,7 +2,7 @@ console.log("this js for only posts' page");
 import '../js';
 import '../assets/scss/main.scss';
 import '../assets/scss/posts.scss';
-import $ from 'jquery';
+import shareMenu from '../js/share-link-menu';
 import Masonry from 'masonry-layout';
 
 // init Masonry
@@ -31,12 +31,5 @@ for (let imgInd = 0; imgInd < images.length; imgInd++) {
 }
 
 //share menu open
-$(document).on('click', ".share", (e) => {
-    const post = $(e.currentTarget).data();
+shareMenu(".share", "news-social-list-open")
 
-    if (post) {
-        const shareMenu = $(`#link-post-${post.id}`);
-        shareMenu.toggleClass("news-social-list-open")
-    }
-});
-//end share menu open

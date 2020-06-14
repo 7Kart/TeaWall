@@ -5,6 +5,7 @@ $circle-animation-time: 0.1s;
 $circle-opacity-time: 0.15s;
 $social-list-color: rgba(119, 116, 116, 0.623);
 
+
 .news-social-list {
     width: calc(2 *#{$margin-social-item}+#{$social-list-width});
     margin-top: 10px;

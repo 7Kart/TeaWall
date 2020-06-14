@@ -123,11 +123,29 @@ section,
   transition: none !important;
 }
 
-main{
+main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  animation-duration: 1s;
+  animation-name: slideinpage;
+  &.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
 }
+
+
+@keyframes slideinpage {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 
 @import "modules/navbar.scss";
 @import "modules/footer.scss";
