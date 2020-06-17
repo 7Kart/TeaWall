@@ -134,6 +134,7 @@ header {
     visibility: hidden;
     transition: all 0.3s ease-out;
     padding-top: $navbarHsm;
+
     hr {
         width: 60%;
     }
@@ -141,6 +142,9 @@ header {
         padding: 10px;
         a {
             color: white;
+            &.active-mobile-link {
+                color: #bdf8a3;
+            }
         }
     }
 }

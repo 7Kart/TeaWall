@@ -20,12 +20,23 @@ export default class {
             const links = navLinks[0].getElementsByTagName("a");
             for (let i = 0; i < links.length; i++) {
                 let curentLink = links[i];
-                console.log('curentLink', curentLink.href === document.URL);
                 if (curentLink.href === document.URL) {
                     curentLink.classList.toggle("active-link");
                 }
             }
         }
+        const mobileNavLinks = document.getElementsByClassName("nav-links-mobile");
+        if (mobileNavLinks && mobileNavLinks[0]) {
+            const links = mobileNavLinks[0].getElementsByTagName("a");
+            for (let i = 0; i < links.length; i++) {
+                let curentLink = links[i];
+                console.log('curentLink', curentLink);
+                if (curentLink.href === document.URL) {
+                    curentLink.classList.toggle("active-mobile-link");
+                }
+            }
+        }
+
     }
 
     runMenu() {
