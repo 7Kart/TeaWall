@@ -1,35 +1,76 @@
-console.log("this js for only posts' page");
 import '../js';
 import '../assets/scss/main.scss';
 import '../assets/scss/posts.scss';
-import shareMenu from '../js/share-link-menu';
+import shareMenuMini from '../js/share-link-menu';
 import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesLoaded';
+import $ from 'jquery';
 
-// init Masonry
-const grid = document.querySelector('.grid');
 
-// console.log('procell' process.env);
+var grid = document.querySelector('.grid');
+var msnry;
 
-const msnry = new Masonry(grid, {
+imagesLoaded(grid, function () {
+  msnry = new Masonry(grid, {
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     percentPosition: true
+  });
 });
 
-const images = grid.getElementsByClassName('post-thumbnail');
-
-//set event OnLoadImage
-
-for (let imgInd = 0; imgInd < images.length; imgInd++) {
-    const image = images[imgInd];
-
-    image.addEventListener('load', () => {
-        console.log(`image loaded`);
-
-        msnry.layout();
-    })
-}
-
 //share menu open
-shareMenu(".share", "news-social-list-open")
+shareMenuMini(".share", "news-social-list-open")
 
+// const url = `http://teawall/wp-admin/admin-ajax.php?action=getNews`
+const url = `/wp-admin/admin-ajax.php?action=getNews`
+
+let curentPage = 1;
+let limit = 10;
+let tag = null;
+let isLoading = false;
+let finish = false;
+
+const loader = $('.pre-loader');
+
+$(window).scroll(function () {
+  if ($(window).scrollTop() == $(document).height() - $(window).height() && !isLoading && !finish) {
+    loader.show();
+    curentPage++;
+    let urlParams = new URLSearchParams(window.location.search);
+    tag = urlParams.get('tag');
+    isLoading = true;
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: {
+        limit: limit,
+        tag: tag,
+        curentPage: curentPage
+      },
+      success: function (data) {
+        isLoading = false;
+        loader.hide();
+        if (data) {
+          $('.grid').append(data);
+          imagesLoaded(grid, function () {
+            msnry = new Masonry(grid, {
+              itemSelector: '.grid-item',
+              columnWidth: '.grid-sizer',
+              percentPosition: true
+            });
+          });
+        } else {
+          finish = true
+        }
+
+      },
+      error: function (err) {
+        isLoading = false;
+        loader.hide();
+        console.log('query err', err);
+      }
+
+    });
+
+  }
+});

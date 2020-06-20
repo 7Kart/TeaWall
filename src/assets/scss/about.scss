@@ -116,30 +116,12 @@
 
     .partner-row {
         display: flex;
-        flex-wrap: wrap;
-
-        @media screen and(max-width: $smDesktopWidth) {
-            margin: 0 20%;
-        }
-        @media screen and(max-width: $tableWidth) {
-            margin: 0 10%;
-        }
-        @media screen and(max-width: $smTableWidth) {
-            margin: 0;
-        }
-        @media screen and(max-height: $phoneWidth) {
-            margin: 0 10%;
-        }
+        justify-content: space-between;
 
         .partner-item {
             position: relative;
-            margin: 20px $marginPartner;
-            width: calc(100% / 12 * 3 - 2 *#{$marginPartner});
-            @media screen and(max-width: $smDesktopWidth) {
-                margin: 20px 15px;
-             
-                width: calc(100% / 12 * 3 - 2 *15px);
-            }
+            margin: 5% 1%;
+            cursor: pointer;
             img {
                 width: 100%;
             }

@@ -16,11 +16,13 @@ export default class {
 
     setActiveLink() {
         const navLinks = document.getElementsByClassName("nav-links");
+        let currentLocation = `${location.protocol}//${location.host + location.pathname}`;
+
         if (navLinks && navLinks[0]) {
             const links = navLinks[0].getElementsByTagName("a");
             for (let i = 0; i < links.length; i++) {
                 let curentLink = links[i];
-                if (curentLink.href === document.URL) {
+                if (curentLink.href === currentLocation) {
                     curentLink.classList.toggle("active-link");
                 }
             }
@@ -30,13 +32,11 @@ export default class {
             const links = mobileNavLinks[0].getElementsByTagName("a");
             for (let i = 0; i < links.length; i++) {
                 let curentLink = links[i];
-                console.log('curentLink', curentLink);
-                if (curentLink.href === document.URL) {
+                if (curentLink.href === currentLocation) {
                     curentLink.classList.toggle("active-mobile-link");
                 }
             }
         }
-
     }
 
     runMenu() {

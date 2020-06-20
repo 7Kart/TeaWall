@@ -1,4 +1,3 @@
-console.log('init share link');
 import $ from "jquery"
 
 export default function (selector, openclassName) {

@@ -1,9 +1,6 @@
 //js for all pages
 import NavMenu from './navMenu';
 import resizeAnimationStopper from './resizeAnimationStopper';
-import $ from "jquery";
-
-console.log("its work");
 
 //stop animation on resize
 resizeAnimationStopper("resize-animation-stopper");
