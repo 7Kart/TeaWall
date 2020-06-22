@@ -1,8 +1,52 @@
-<h1>
-    single post
-</h1>
-<div class="post-container">
-    <div class="post-content">
-        
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Новости</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <%= require('html-loader!../htmlPartials/navbar.html') %>
+        </header>
+        <main>
+            <div class="posts-container">
+
+            </div>
+
+            <div class="last-posts-container">
+                <div class="las-post-wrapper">
+                    <h1>Недавние посты</h1>
+                    <div class="post-row">
+
+                        <div class="last-post">
+                            <a href="">
+                                <div class="post-img-container"
+                                    style="background-image: url('./assets/img/posts/12.jpg');">
+                                    <div class="author-container">
+                                        <div class="author-info">
+                                            <img scr="../assets/img/author.png" width="15px"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia magnam dolore,
+                                </h4>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+        <div>
+            <%= require('html-loader!../htmlPartials/footer.html') %>
+        </div>
+</body>
+
+</html>

@@ -25,7 +25,6 @@ export default function (selector, openclassName) {
     $(".social-item-link").click((e) => {
         const input = $(e.currentTarget).find("input").first();
         input.attr("type", "text")
-        // input.focus();
         input.select();
         document.execCommand("copy");
         input.attr("type", "hidden")
