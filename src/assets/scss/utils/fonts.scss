@@ -28,6 +28,18 @@
   }
 */
 
+
+
+  // Base Helvetica (example):
+  @font-face {
+    font-family: "Raleway";
+
+    src: url('/assets/fonts/Raleway-Regular.ttf')  format('truetype'), // Safari, Android, iOS
+
+  }
+
+
+
 // 2. Example with mixin (example):
 // NOTE: do NOT use expansion (.woff, .svg etc) for path! Path will be '/assets/fonts/OpenSans/opensans';
 // NOTE-2: files required: `.woff, .woffs` (by default) OR `eot. .woff, .woffs, .svg, .ttf` if you use another mixin;
