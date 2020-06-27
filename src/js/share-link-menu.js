@@ -1,4 +1,8 @@
-import $ from "jquery"
+import $ from "jquery";
+import ClipboardJS from "clipboard";
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+
 
 export default function (selector, openclassName) {
 
@@ -22,14 +26,28 @@ export default function (selector, openclassName) {
         }
     });
 
-    $(".social-item-link").click((e) => {
-        const input = $(e.currentTarget).find("input").first();
-        input.attr("type", "text")
-        input.select();
-        document.execCommand("copy");
-        input.attr("type", "hidden")
-        shareMenu.removeClass(openclassName)
-        shareMenu = null;
+
+
+    const clipboard = new ClipboardJS('.social-item-link');
+
+    tippy('.social-item-link', {
+        placement: 'bottom',
+        trigger: 'click',
+        content: 'Ссылка скопирована!',
+        allowHTML: true,
+        // animation: false,
+        onHide(instance) {
+
+            shareMenu.removeClass(openclassName)
+            shareMenu = null;
+
+        },
+        onShow(instance) {
+            setTimeout(() => {
+                instance.hide();
+            }, 1000)
+        },
     });
+
 
 }

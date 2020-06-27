@@ -13,10 +13,12 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "clipboard": "^2.0.6",
     "imagesloaded": "^4.1.4",
     "instafeed.js": "^1.4.1",
     "jquery": "^3.5.1",
-    "masonry-layout": "^4.2.2"
+    "masonry-layout": "^4.2.2",
+    "tippy.js": "^6.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
