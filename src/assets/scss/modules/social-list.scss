@@ -1,6 +1,6 @@
 @import "utils/vars";
 
-$social-list-width: 55px;
+$social-list-width: 65px;
 $social-list-mrg: 5px;
 
 $circle-animation-time: 0.1s;
@@ -12,14 +12,34 @@ $social-list-color: rgba(119, 116, 116, 0.623);
     position: absolute;
     right: 0;
     top: 0;
-    width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});
+    // width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});
+    width: 90px;    
     height: auto;
     border-radius: 10px;
-    margin-top: 3%;
-    padding: 2% 0;
+    margin-top: 20px;
+    padding: 5px 0;
     background-color: transparent;
     transition-delay: 0.5s;
     transition: background-color 0.5s ease;
+
+    @media screen and (max-width: $phoneWidth  ) {
+        padding: 5px 0;        
+        margin-top: 1%!important;
+        width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});   
+
+    }
+
+    .share-button {
+        svg {
+            margin: 0 auto;
+            cursor: pointer;
+            display: block;
+            fill: white;
+            &:hover {
+                fill: $active-link-color !important;
+            }
+        }
+    }
 
     .share {
         display: flex;
@@ -29,15 +49,6 @@ $social-list-color: rgba(119, 116, 116, 0.623);
         justify-content: center;
         margin-bottom: 15px;
         cursor: pointer;
-        &:hover {
-            color: $active-link-color;
-        }
-        i {
-            cursor: pointer;
-            @media screen and(max-width: $phoneWidth) {
-                font-size: 18px;
-            }
-        }
     }
 
     &.social-link-container-open {
@@ -93,7 +104,8 @@ $social-list-color: rgba(119, 116, 116, 0.623);
         visibility: hidden;
         width: $social-list-width;
         height: $social-list-width;
-        margin: $social-list-mrg;
+        // margin: $social-list-mrg;
+        margin: $social-list-mrg auto;
         transform: scale(0.3, 0.3);
         opacity: 0;
         border-radius: 50%;
@@ -101,7 +113,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
         display: flex;
         justify-content: center;
         align-items: center;
-        a{
+        a {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -126,5 +138,4 @@ $social-list-color: rgba(119, 116, 116, 0.623);
     #social-item-link {
         background-color: #333;
     }
-
 }

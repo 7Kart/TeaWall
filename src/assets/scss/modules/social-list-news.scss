@@ -1,4 +1,4 @@
-$social-list-width: 55px;
+$social-list-width: 65px;
 $margin-social-item: 5px;
 
 $circle-animation-time: 0.1s;
@@ -6,8 +6,9 @@ $circle-opacity-time: 0.15s;
 $social-list-color: rgba(119, 116, 116, 0.623);
 
 .news-social-list {
-    width: calc(2 *#{$margin-social-item}+#{$social-list-width});
-    margin-top: 10px;
+    // width: calc(2 *#{$margin-social-item}+#{$social-list-width});
+    width: 85px;
+    margin-top: 20px;
     border-radius: 10px;
     position: absolute;
     right: 0;
@@ -15,21 +16,20 @@ $social-list-color: rgba(119, 116, 116, 0.623);
     z-index: 990;
     transition: background-color 0.5s ease;
 
+    svg {
+        cursor: pointer;
+        fill: white;
+        &:hover {
+            fill: #bdf8a3 !important;
+        }
+    }
+
     .share {
         padding-top: 5px;
         display: flex;
         font-size: 22px;
         color: white;
         justify-content: center;
-        i {
-            cursor: pointer;
-            @media screen and(max-width: $phoneWidth) {
-                font-size: 18px;
-            }
-            &:hover {
-                color: #bdf8a3;
-            }
-        }
     }
 
     &.news-social-list-open {
@@ -81,7 +81,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
             height: $social-list-width;
             // margin: $social-list-mrg;
             display: flex;
-            margin: $margin-social-item;
+            margin: $margin-social-item auto;
             justify-content: center;
             border-radius: 50%;
             align-items: center;

@@ -13,11 +13,14 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@swup/head-plugin": "^1.0.2",
+    "@swup/scripts-plugin": "^1.1.0",
     "clipboard": "^2.0.6",
     "imagesloaded": "^4.1.4",
     "instafeed.js": "^1.4.1",
     "jquery": "^3.5.1",
     "masonry-layout": "^4.2.2",
+    "swup": "^2.0.10",
     "tippy.js": "^6.2.3"
   },
   "devDependencies": {

@@ -14,10 +14,12 @@
         margin: 0;
     }
     & > h1 {
-        padding: calc(10px+#{$marginPost}) $marginPost 10px $marginPost;
-        font-family: Lora;
-        font-style: italic;
-        font-weight: bold;
+        padding: calc(#{$h1custom}+#{$marginPost}) $marginPost 10px $marginPost;
+        // font-family: Lora;
+        // font-style: italic;
+        // font-weight: bold;
+        font-family: Lora-BoldItalic;
+        color: #404040;
         font-size: 42px;
         line-height: 109.6%;
         @media screen and(max-width: $smDesktopWidth) {
@@ -88,11 +90,14 @@
                     background-color: #0000005b;
                 }
                 .project-footer {
-                    padding: 10px 20px;
+                    // padding: 10px 20px;
+                    padding: 36px 32px;
                     display: flex;
                     justify-content: space-between;
                     a {
                         color: white;
+                        font-family: Lora-BoldItalic;
+                        font-size: 16px;
                     }
                     i{
                         cursor: pointer;

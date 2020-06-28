@@ -14,10 +14,11 @@
         margin: 0;
     }
     & > h1 {
-        padding: calc(10px+#{$marginPost}) $marginPost 10px $marginPost;
-        font-family: Lora;
-        font-style: italic;
-        font-weight: bold;
+        padding: calc(#{$h1custom}+#{$marginPost}) $marginPost 10px $marginPost;
+        font-family: Lora-BoldItalic;
+        color: #404040;
+        // font-style: italic;
+        // font-weight: bold;
         font-size: 42px;
         line-height: 109.6%;
         @media screen and(max-width: $smDesktopWidth) {
@@ -72,7 +73,7 @@
         width: calc(100% / 12 * 12 - 2 *#{$marginPost});
     }
     margin: $marginPost;
-    border: 1px solid #cccccc;
+    // border: 1px solid #cccccc;
     position: relative;
     // width: calc(100% / 12 * 12-2 *#{$marginGrid});
 }
@@ -85,14 +86,18 @@
             position: absolute;
             height: 100%;
             width: 100%;
-            background-color: rgba(56,67,64,.51);
+            border-radius: 10px 10px 0 0;
+            // background-color: rgba(56,67,64,.51);
+            background: rgba($color: #384340, $alpha: 0.7);
         }   
         img {
             width: 100%;
+            border-radius: 10px 10px 0 0;
         }
         .post-meta {
             top: 0;
-            padding: 10px;
+            // padding: 10px;
+            padding: 32px 0px 24px 36px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -104,17 +109,21 @@
                 justify-content: space-between;
                 align-items: center;
                 .hashtag {
-                    padding: 5px;
+                    padding: 5px 20px;
                     border-radius: 6px;
                     background-color: #bdf8a3;
-                    max-width: 85%;
+                    max-width: 75%;
                     a {
                         font-family: Raleway;
-                        font-style: normal;
-                        font-weight: 600;
+                        // font-style: normal;
+                        // font-weight: 600;
                         font-size: 14px;
                         cursor: pointer;
-                        color: #101010;
+                        // color: #101010;
+                        color: #202020;
+                    }
+                    @media screen and (max-width: $smTableWidth) {
+                        max-width: 80%;
                     }
                 }
             }
@@ -135,6 +144,14 @@
                 }
                 .post-info {
                     padding-left: 10px;
+                    p {
+                        &#author-name {
+                            font-family: Raleway;
+                        }
+                        &#post-date {
+                            font-family: Raleway-Regular;
+                        }
+                    }
                     @media screen and(max-width: $phoneWidth) {
                         font-size: 12px;
                         line-height: 14px;
@@ -148,25 +165,31 @@
         }
     }
     .block-info {
-        padding: 10px;
-        background: #f9f9f9;
+        // padding: 10px;
+        padding: 32px 24px 38px 36px;
+        background: #F9F9F9;
         font-family: Raleway;
+        border-radius: 0 0 10px 10px;
         a {
             color: inherit;
             cursor: pointer;
         }
         h1 {
-            font-style: normal;
-            font-weight: 600;
+            // font-style: normal;
+            padding-bottom: 12px;
+            // font-weight: 600;
             font-size: 24px;
             line-height: 28px;
+            color: #404040;
         }
         p {
-            font-family: Lora;
-            font-style: italic;
-            font-weight: normal;
+            // font-family: Lora;
+            // font-style: italic;
+            // font-weight: normal;
+            font-family: Lora-Italic;
             font-size: 17px;
             line-height: 22px;
+            color: #404040;
         }
     }
 }

@@ -131,6 +131,14 @@ main {
   flex-direction: column;
 }
 
+.transition-fades{
+  transition: .4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fades{
+  opacity: 0;
+}
 
 
 @import "modules/navbar.scss";

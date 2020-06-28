@@ -1,13 +1,27 @@
 //js for all pages
 import NavMenu from './navMenu';
 import resizeAnimationStopper from './resizeAnimationStopper';
+import Swup from 'swup';
+
+// import SwupHeadPlugin from '@swup/head-plugin';
+// import SwupScriptsPlugin from '@swup/scripts-plugin';
 
 //stop animation on resize
-resizeAnimationStopper("resize-animation-stopper");
 
 //init nav menu
 const navMenu = new NavMenu(".navigation-menu", "navigation-menu-open", ".hamburger");
 navMenu.runMenu();
+
+// const headerPlugin = new SwupHeadPlugin();
+// const scriptPlugin = new SwupScriptsPlugin({
+//     head: true,
+//     body: true
+//   });
+
+// const swup = new Swup({
+//     plugins: [headerPlugin]
+// })
+
 
 //init page animation
 // let links = document.querySelectorAll('a');

@@ -8,7 +8,7 @@ header {
 
 .active-link {
     color: #bdf8a3 !important;
-    border-bottom: 3px solid #bdf8a3;
+    border-bottom: 2px solid #bdf8a3;
 }
 
 .navigation-menu {
@@ -67,9 +67,9 @@ header {
             align-items: center;
             h1 {
                 width: 100%;
-                font-family: Lora;
-                font-style: italic;
-                font-weight: bold;
+                font-family: "Lora-BoldItalic";
+                // font-style: italic;
+                // font-weight: bold;
                 font-size: 46px;
                 line-height: 60px;
                 color: #ffffff;
@@ -95,7 +95,8 @@ header {
 }
 
 .nav-links {
-    margin-right: calc(((100%-1024px) / 2)+#{$marginPost});
+    // margin-right: calc(((100%-1024px) / 2)+#{$marginPost});
+    margin-right: 148px;
     @media screen and (max-width: $desktopWidth) {
         margin-right: 0;
     }
@@ -105,10 +106,10 @@ header {
     display: flex;
     align-items: center;
     a {
-        margin-left: 15px;
+        margin-left: 46px;
         font-family: Raleway;
-        font-style: normal;
-        font-weight: 600;
+        // font-style: normal;
+        // font-weight: 600;
         font-size: 22px;
         line-height: 26px;
         color: white;
@@ -117,7 +118,14 @@ header {
         &:hover {
             color: #bdf8a3;
             transition: color 0.3s ease-out;
-            border-bottom: 3px solid #bdf8a3;
+            border-bottom: 2px solid #bdf8a3;
+        }
+    }
+    li {
+        &:first-child {
+            a {
+                margin-left: 0px;
+            }
         }
     }
 }

@@ -39,34 +39,42 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 
 	.social-link-container {
 		position: absolute;
-		// width: 100px;
+		margin-top: 5px;
 		right: 0;
 		border-radius: 10px;
 		.share-button {
 			display: flex;
 			justify-content: center;
-			i {
-				color: #404040;
-				line-height: 58px;
-				font-size: 24px;
-
-				@media screen and (max-width: $tableWidth) {
-					font-size: 22px;
-					line-height: 56px;
-				}
-				@media screen and (max-width: $smTableWidth) {
-					font-size: 22px;
-					line-height: 42px;
-				}
-				@media screen and (max-width: $phoneWidth) {
-					font-size: 18px;
-					line-height: 26px;
-				}
+			svg {
+				cursor: pointer;
+				fill: #404040;
 				&:hover {
-					color: $active-link-color;
-					cursor: pointer;
+					fill: $active-link-color; 
 				}
 			}
+
+			// i {
+			// 	color: #404040;
+			// 	line-height: 58px;
+			// 	font-size: 24px;
+
+			// 	@media screen and (max-width: $tableWidth) {
+			// 		font-size: 22px;
+			// 		line-height: 56px;
+			// 	}
+			// 	@media screen and (max-width: $smTableWidth) {
+			// 		font-size: 22px;
+			// 		line-height: 42px;
+			// 	}
+			// 	@media screen and (max-width: $phoneWidth) {
+			// 		font-size: 18px;
+			// 		line-height: 26px;
+			// 	}
+			// 	&:hover {
+			// 		color: $active-link-color;
+			// 		cursor: pointer;
+			// 	}
+			// }
 		}
 
 		&.social-link-container-open {
