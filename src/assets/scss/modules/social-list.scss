@@ -16,7 +16,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
     width: 90px;    
     height: auto;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
     padding: 5px 0;
     background-color: transparent;
     transition-delay: 0.5s;
@@ -24,7 +24,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 
     @media screen and (max-width: $phoneWidth  ) {
         padding: 5px 0;        
-        margin-top: 1%!important;
+        margin-top: 0.2%!important;
         width: calc(#{$social-list-width} + 2 *#{$social-list-mrg});   
 
     }

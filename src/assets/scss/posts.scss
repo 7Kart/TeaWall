@@ -108,11 +108,10 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                .hashtag {
-                    padding: 5px 20px;
-                    border-radius: 6px;
-                    background-color: #bdf8a3;
+                .hashtag {            
+                    border-radius: 6px;                 
                     max-width: 75%;
+                    line-height: 1;
                     a {
                         font-family: Raleway;
                         // font-style: normal;
@@ -120,7 +119,7 @@
                         font-size: 14px;
                         cursor: pointer;
                         // color: #101010;
-                        color: #202020;
+                        color: #bdf8a3;       
                     }
                     @media screen and (max-width: $smTableWidth) {
                         max-width: 80%;
@@ -131,18 +130,18 @@
             .post-footer {
                 display: flex;
                 color: white;
+                height: 50px;
                 .author-avatar {
                     display: flex;
                     align-items: center;
                     img {
                         border-radius: 50%;
-                        @media screen and(max-width: $phoneWidth) {
-                            height: 34px;
-                            width: auto;
-                        }
                     }
                 }
                 .post-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
                     padding-left: 10px;
                     p {
                         &#author-name {

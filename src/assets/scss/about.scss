@@ -76,34 +76,57 @@
                 width: 100%;
                 border-radius: 10px;
             }
-            .project-image-mask {
-                border-radius: 10px;
+
+            .project-link-container {
                 position: absolute;
                 height: 100%;
+                display: block;
                 width: 100%;
-                background-color: #00000038;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
 
-                &:hover {
-                    background-color: #0000005b;
-                }
-                .project-footer {
-                    // padding: 10px 20px;
-                    padding: 36px 32px;
+
+
+                .project-image-mask {
+                    border-radius: 10px;
+                    width: 100%;
+                    height: 100%;
+
+                    background-color: #00000038;
                     display: flex;
-                    justify-content: space-between;
-                    a {
-                        color: white;
-                        font-family: Lora-BoldItalic;
-                        font-size: 16px;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    transition: background-color .4s ease;
+
+                    &:hover {
+                        transition: background-color .4s ease;
+                        background-color: #0000005b;
                     }
-                    i{
-                        cursor: pointer;
-                        color: white;
-                        &:hover{
-                            color: $active-link-color;
+
+                    &:hover p {
+                        color: $active-link-color !important;
+                    }
+    
+                    &:hover i {
+                        color: $active-link-color !important;
+                    }
+
+                    .project-footer {
+                        // padding: 10px 20px;
+                        padding: 30px 32px;
+                        display: flex;
+                        justify-content: space-between;
+                        line-height: 2;
+                        p {
+                            color: white;
+                            font-family: Lora-BoldItalic;
+                            font-size: 20px;
+                        }
+                        i {
+                            cursor: pointer;
+                            color: white;
+                            line-height: 2;
+                            // &:hover {
+                            //     color: $active-link-color;
+                            // }
                         }
                     }
                 }

@@ -1,6 +1,6 @@
 footer {
     position: relative;
-    background-color: black;
+    background-color: #202020;
     color: white;
 }
 .footer-container {
@@ -11,25 +11,13 @@ footer {
         margin: 0 auto;
         padding: 35px 0;
         text-align: center;
-        // @media screen and (max-width: $desktopWidth) {
-        //     width: 80%;
-        // }
-        // @media screen and (max-width: $smDesktopWidth) {
-        //     width: 85%;
-        // }
-        // @media screen and (max-width: smTableWidth) {
-        //     width: 90%;
-        // }
+
         p {
+            font-family: Raleway-Regular;
             width: 80%;
             margin: 0 auto;
-            font-family: Raleway;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 16px;
-            text-align: center;
-            
+            // font-size: 0.5rem;
+            font-size: 0.78rem;
             color: #FFFFFF;
         }
 

@@ -85,9 +85,13 @@ header {
                 }
                 @media screen and (max-width: $phoneWidth) {
                     padding: 0 1%;
-
                     font-size: 18px;
                     line-height: 24px;
+                }
+                @media screen and (max-width: $smPhoneWidth) {
+                    padding: 0 1%;
+                    font-size: 16px;
+                    line-height: 20px;
                 }
             }
         }
