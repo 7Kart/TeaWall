@@ -49,32 +49,9 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 				cursor: pointer;
 				fill: #404040;
 				&:hover {
-					fill: $active-link-color; 
+					fill: $active-link-color;
 				}
 			}
-
-			// i {
-			// 	color: #404040;
-			// 	line-height: 58px;
-			// 	font-size: 24px;
-
-			// 	@media screen and (max-width: $tableWidth) {
-			// 		font-size: 22px;
-			// 		line-height: 56px;
-			// 	}
-			// 	@media screen and (max-width: $smTableWidth) {
-			// 		font-size: 22px;
-			// 		line-height: 42px;
-			// 	}
-			// 	@media screen and (max-width: $phoneWidth) {
-			// 		font-size: 18px;
-			// 		line-height: 26px;
-			// 	}
-			// 	&:hover {
-			// 		color: $active-link-color;
-			// 		cursor: pointer;
-			// 	}
-			// }
 		}
 
 		&.social-link-container-open {
@@ -637,26 +614,27 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 				margin: 15px;
 				a {
 					h6 {
-						font-weight: 500;
-
+						padding: 32px 24px 38px 36px;
 						font-family: Raleway;
-						font-style: normal;
-						font-size: 24px;
-						line-height: 28px;
+						border-radius: 0 0 10px 10px;
+						background: white;
+						font-size: 20px;
+						line-height: 24px;
 						color: #404040;
+						
 						@media screen and (max-width: $tableWidth) {
-							font-size: 22px;
-							line-height: 24px;
+							font-size: 18px;
+							line-height: 20px;
 						}
 
 						@media screen and (max-width: $smTableWidth) {
-							font-size: 20px;
-							line-height: 22px;
+							font-size: 18px;
+							line-height: 20px;
 						}
 
 						@media screen and (max-width: $smPhoneWidth) {
 							font-size: 18px;
-							line-height: 22px;
+							line-height: 29px;
 						}
 					}
 
@@ -687,6 +665,7 @@ $social-list-color: rgba(119, 116, 116, 0.623);
 							.author-info {
 								position: absolute;
 								bottom: 0;
+								height: 40px;
 								margin: 10px;
 								display: flex;
 								flex-direction: row;
