@@ -100,7 +100,9 @@ header {
 
 .nav-links {
     // margin-right: calc(((100%-1024px) / 2)+#{$marginPost});
-    margin-right: 148px;
+    // margin-right: 148px;
+    margin-right: calc(((100%-1024px) / 4) + 37px);
+
     @media screen and (max-width: $desktopWidth) {
         margin-right: 0;
     }
