@@ -2,21 +2,21 @@
    https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
    ========================================================================== */
 
-   @import "mixins";
+@import "mixins";
 
-   /*
+/*
      Сhoose one of the ways:
        1. handle menthod,
        2. use mixin;
    */
-   
-   // 1. Example handle menthod (without mixin):
-   @include font-face("futura-lt-w01-book", "/assets/fonts/Futura LT W01 Medium");
-   
-   // @include font-face("Raleway", "/assets/fonts/ralewayregular");
-   // url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap');
-   
-   /*
+
+// 1. Example handle menthod (without mixin):
+@include font-face("futura-lt-w01-book", "/assets/fonts/Futura LT W01 Medium");
+
+// @include font-face("Raleway", "/assets/fonts/ralewayregular");
+// url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap');
+
+/*
      // Base Helvetica (example):
      @font-face {
        font-family: "Helvetica-Base";
@@ -27,42 +27,47 @@
             url('/assets/fonts/Helvetica/Base/Helvetica-Base.svg') format('svg'); // Legacy iOS
      }
    */
-   
-   // @include font-face("lora-italic", "/assets/fonts/Lora-Italic");
-   
-     // Base Helvetica (example):
-     @font-face {
-       font-family: "Raleway";
-       src: url('/assets/fonts/Raleway-SemiBold.ttf')  format('truetype'), // Safari, Android, iOS
-     }
-     @font-face {
-       font-family: "Raleway-Regular";
-       src: url('/assets/fonts/Raleway-Regular.ttf')  format('truetype'), // Safari, Android, iOS
-     }
-     @font-face {
-       font-family: "Lora-Italic";
-       src: url('/assets/fonts/Lora-Italic.ttf')  format('truetype'), // Safari, Android, iOS
-     }
-     @font-face {
-       font-family: "Lora-BoldItalic";
-       src: url('/assets/fonts/Lora-BoldItalic.ttf')  format('truetype'), // Safari, Android, iOS
-     }
-   
-   
-   
-   // 2. Example with mixin (example):
-   // NOTE: do NOT use expansion (.woff, .svg etc) for path! Path will be '/assets/fonts/OpenSans/opensans';
-   // NOTE-2: files required: `.woff, .woffs` (by default) OR `eot. .woff, .woffs, .svg, .ttf` if you use another mixin;
-   
-   // Base OpenSans:
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensans");
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanslight", 300);
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanssemibold", 600);
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansbold", bold);
-   
-   // Italic OpenSans:
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansItalic", 400, italic);
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansLightItalic", 300, italic);
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansSemiBoldItalic", 600, italic);
-   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansBoldItalic", bold, italic);
-   
+
+// @include font-face("lora-italic", "/assets/fonts/Lora-Italic");
+
+// Base Helvetica (example):
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway-SemiBold.ttf") format("truetype"); // Safari, Android, iOS
+}
+@font-face {
+  font-family: "Raleway-Regular";
+  src: url("/assets/fonts/Raleway-Regular.ttf") format("truetype"); // Safari, Android, iOS
+}
+@font-face {
+  font-family: "Lora-Italic";
+  src: url("/assets/fonts/Lora-Italic.ttf") format("truetype"); // Safari, Android, iOS
+}
+@font-face {
+  font-family: "Lora-BoldItalic";
+  src: url("/assets/fonts/Lora-BoldItalic.ttf") format("truetype"); // Safari, Android, iOS
+}
+@font-face {
+  font-family: "Lora-Bold";
+  src: url("/assets/fonts/Lora-Bold.ttf") format("truetype"); // Safari, Android, iOS
+}
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("/assets/fonts/Lora-Regular.ttf") format("truetype"); // Safari, Android, iOS
+}
+
+// 2. Example with mixin (example):
+// NOTE: do NOT use expansion (.woff, .svg etc) for path! Path will be '/assets/fonts/OpenSans/opensans';
+// NOTE-2: files required: `.woff, .woffs` (by default) OR `eot. .woff, .woffs, .svg, .ttf` if you use another mixin;
+
+// Base OpenSans:
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensans");
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanslight", 300);
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanssemibold", 600);
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansbold", bold);
+
+// Italic OpenSans:
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansItalic", 400, italic);
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansLightItalic", 300, italic);
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansSemiBoldItalic", 600, italic);
+// @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansBoldItalic", bold, italic);

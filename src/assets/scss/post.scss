@@ -147,13 +147,24 @@ main {
 }
 
 .entry-content {
-	p {
-		font-family: Lora;
+	color: #252525;
+
+
+
+	em {
+		font-family: Lora-Italic;
+	}
+
+	strong {
+		font-family: Lora-Bold;
+		em {
+			font-family: Lora-BoldItalic;
+		}
 	}
 }
 
 .posts-container {
-	padding-top: 1%;
+	padding-top: 24px;
 
 	width: $tableWidth;
 	margin: 0 auto;
@@ -202,6 +213,8 @@ main {
 	}
 
 	ul {
+		padding-bottom: 10px;
+
 		li {
 			margin-left: 20px;
 			list-style: decimal;
@@ -209,6 +222,8 @@ main {
 	}
 
 	ol {
+		padding-bottom: 10px;
+
 		li {
 			margin-left: 20px;
 			list-style: disc;
@@ -567,7 +582,7 @@ main {
 	background-color: #f8f8f8;
 	.las-post-wrapper {
 		width: $tableWidth;
-		margin: 1% auto 86px auto;
+		margin: 1% auto 76px auto;
 
 		@media screen and (max-width: $tableWidth) {
 			width: 100%;
@@ -712,8 +727,6 @@ main {
 		display: flex;
 		flex-direction: row;
 		font-family: Raleway;
-		font-style: normal;
-		font-weight: 600;
 		font-size: 24px;
 		line-height: 28px;
 		color: #474747;
@@ -733,7 +746,9 @@ main {
 			line-height: 22px;
 		}
 		.hashtag {
+			font-family: Raleway;
 			background-color: $active-link-color;
+			font-size: 24px;
 			padding: 10px;
 			border-radius: 10px;
 			a {

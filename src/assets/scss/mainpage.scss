@@ -40,7 +40,8 @@
     .last-post-row {
         display: flex;
         flex-wrap: wrap;
-        // margin: 0 calc(-1 *#{$marginPost});
+        margin-bottom: 30px;
+        // margin: 0 calc(-1 *#{$marginPost}) 30px calc(-1 *#{$marginPost});
         // width: 100%;
         @media screen and(max-width: $smDesktopWidth) {
             margin: 0 20%;

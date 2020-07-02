@@ -13,40 +13,47 @@ resizeAnimationStopper("resize-animation-stopper");
 const navMenu = new NavMenu(".navigation-menu", "navigation-menu-open", ".hamburger");
 navMenu.runMenu();
 
-// const stylePlugin = new SwupHeadPlugin();
-// const scriptPlugin = new SwupScriptsPlugin({
-//     head: true,
-//     body: true
-//   });
+fadeInPage();
+function fadeInPage() {
+    if (!window.AnimationEvent) {
+        return;
+    }
+    const fader = document.getElementById('fader');
+    if (fader) {
+        fader.classList.add('fade-out');
+    }
+}
 
-// const swup = new Swup({
-//     plugins: [stylePlugin]
-// })
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.AnimationEvent) { return; }
+    // var anchors = document.getElementsByTagName('a');
+    var anchors = document.getElementsByClassName('animation-links');
 
+    for (var idx = 0; idx < anchors.length; idx += 1) {
+        if (anchors[idx].hostname !== window.location.hostname ||
+            anchors[idx].pathname === window.location.pathname) {
+            continue;
+        }
+        anchors[idx].addEventListener('click', function (event) {
+            var fader = document.getElementById('fader'),
+                anchor = event.currentTarget;
 
+            var listener = function () {
+                window.location = anchor.href;
+                fader.removeEventListener('animationend', listener);
+            };
+            fader.addEventListener('animationend', listener);
 
+            event.preventDefault();
+            fader.classList.add('fade-in');
+        });
+    }
+});
 
-
-//init page animation
-// let links = document.querySelectorAll('a');
-// if (links) {
-//     links.forEach(link => {
-//         if (!link.classList.contains("ignore-page-transition")) {
-//             link.onclick = (e) => {
-//                 let body = document.querySelector("main");
-//                 e.preventDefault();
-//                 console.log('clicl link');
-//                 setTimeout(function () {
-//                     if (body.classList.contains("fade-out")) {
-//                         if (!e.srcElement.parentElement.href) {
-//                             window.location = e.srcElement.href;
-//                         } else {
-//                             window.location = e.srcElement.parentElement.href;
-//                         }
-//                     }
-//                 }, 300);
-//                 body.classList.add("fade-out")
-//             }
-//         }
-//     });
-// }
+window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) {
+        return;
+    }
+    var fader = document.getElementById('fader');
+    fader.classList.remove('fade-in');
+});
