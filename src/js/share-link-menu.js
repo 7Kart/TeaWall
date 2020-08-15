@@ -26,28 +26,35 @@ export default function (selector, openclassName) {
         }
     });
 
+    initToolTips();
 
+    document.addEventListener('scrollLoad', function (e) {  
+        initToolTips();
+    }, false);
 
     const clipboard = new ClipboardJS('.social-item-link');
 
-    tippy('.social-item-link', {
-        placement: 'bottom',
-        trigger: 'click',
-        content: 'Ссылка скопирована!',
-        allowHTML: true,
-        // animation: false,
-        onHide(instance) {
+    function initToolTips(){
+        tippy('.social-item-link', {
+            placement: 'bottom',
+            trigger: 'click',
+            content: 'Ссылка скопирована!',
+            allowHTML: true,
+            // animation: false,
+            onHide(instance) {    
+                if(shareMenu){
+                    shareMenu.removeClass(openclassName)
+                }
+                shareMenu = null;    
+            },
+            onShow(instance) {
+                setTimeout(() => {
+                    instance.hide();
+                }, 1000)
+            },
+        });
+    }
 
-            shareMenu.removeClass(openclassName)
-            shareMenu = null;
-
-        },
-        onShow(instance) {
-            setTimeout(() => {
-                instance.hide();
-            }, 1000)
-        },
-    });
 
 
 }

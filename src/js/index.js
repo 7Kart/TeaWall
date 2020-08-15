@@ -29,25 +29,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // var anchors = document.getElementsByTagName('a');
     var anchors = document.getElementsByClassName('animation-links');
 
-    for (var idx = 0; idx < anchors.length; idx += 1) {
-        if (anchors[idx].hostname !== window.location.hostname ||
-            anchors[idx].pathname === window.location.pathname) {
-            continue;
+    var fader = document.getElementById('fader');
+
+    if (fader) {
+        for (var idx = 0; idx < anchors.length; idx += 1) {
+            if (anchors[idx].hostname !== window.location.hostname ||
+                anchors[idx].pathname === window.location.pathname) {
+                continue;
+            }
+            anchors[idx].addEventListener('click', function (event) {
+                var anchor = event.currentTarget;
+
+                var listener = function () {
+                    window.location = anchor.href;
+                    fader.removeEventListener('animationend', listener);
+                };
+                fader.addEventListener('animationend', listener);
+
+                event.preventDefault();
+                fader.classList.add('fade-in');
+            });
         }
-        anchors[idx].addEventListener('click', function (event) {
-            var fader = document.getElementById('fader'),
-                anchor = event.currentTarget;
-
-            var listener = function () {
-                window.location = anchor.href;
-                fader.removeEventListener('animationend', listener);
-            };
-            fader.addEventListener('animationend', listener);
-
-            event.preventDefault();
-            fader.classList.add('fade-in');
-        });
     }
+
 });
 
 window.addEventListener('pageshow', function (event) {
@@ -55,5 +59,7 @@ window.addEventListener('pageshow', function (event) {
         return;
     }
     var fader = document.getElementById('fader');
-    fader.classList.remove('fade-in');
+    if (fader) {
+        fader.classList.remove('fade-in');
+    }
 });

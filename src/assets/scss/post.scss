@@ -11,10 +11,40 @@ main {
 	color: #252525;
 }
 
+.author-container {
+	display: flex;
+	flex-direction: row;
+	height: 40px;
+	margin-bottom: 50px;
+	color: #404040;
+	img {
+		border-radius: 50%;
+	}
+	.authr-meta {
+		padding-left: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		p {
+			font-size: 16px;
+			line-height: 19px;
+			padding: 0;
+			&.author-name {
+				font-family: Raleway;
+			}
+
+			&.post-date {
+				font-family: Raleway-Regular;
+			}
+		}
+	}
+}
+
 .entry-header {
 	height: auto;
 	display: flex;
-	padding-bottom: 10px;
+	padding: 55px 0 28px 0;
 	position: relative;
 	h1 {
 		font-family: Raleway;
@@ -149,23 +179,23 @@ main {
 .entry-content {
 	color: #252525;
 
-
+	font-family: Lora-Regular;
 
 	em {
+		font-style: normal;
 		font-family: Lora-Italic;
 	}
 
 	strong {
 		font-family: Lora-Bold;
 		em {
+			font-style: normal;
 			font-family: Lora-BoldItalic;
 		}
 	}
 }
 
 .posts-container {
-	padding-top: 24px;
-
 	width: $tableWidth;
 	margin: 0 auto;
 	font-family: Lora;
@@ -179,7 +209,7 @@ main {
 	}
 
 	p {
-		padding-bottom: 10px;
+		padding: 5px 0;
 		&.has-text-align-right {
 			text-align: right;
 		}
@@ -457,7 +487,7 @@ main {
 		// uses <figure> element
 		// <img> as a descendent
 		max-width: 100%;
-		margin-bottom: 1em;
+		margin-bottom: 10px;
 		margin-left: 0;
 		margin-right: 0;
 
@@ -591,8 +621,8 @@ main {
 		}
 
 		h1 {
-			font-family: Lora;
-			font-style: italic;
+			font-family: Lora-Italic;
+
 			font-weight: bold;
 			font-size: 36px;
 			line-height: 47px;
@@ -747,12 +777,12 @@ main {
 		}
 		.hashtag {
 			font-family: Raleway;
-			background-color: $active-link-color;
-			font-size: 24px;
+			// background-color: $active-link-color;
+			font-size: 20px;
 			padding: 10px;
-			border-radius: 10px;
+			// border-radius: 10px;
 			a {
-				color: #474747;
+				color: #3d8e19;
 			}
 		}
 
